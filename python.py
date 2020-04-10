@@ -1,18 +1,40 @@
-cat templates/top.html content/index.html templates/bottom.html
-> docs/index.html
+def top()
+top = open('templates/top.html').read()
 
-cat index.html > content/index.html
+print(top)
 
-cat about.html > content/about.html
+def bottom()
+bottom = open('templates/bottom.html').read()
 
-cat contact.html > content/contact.html
+print(bottom)
 
-cat projects.html > content/projects.html
+# page_title = page['title']
+# print(page_title)
 
-cat index.html > docs/index.html
+pages = [
+{
+    "filename": "content/index.html",
+    "output": "docs/index.html",
+    "title": "Deepinder Kaur",
+},
+{
+    "filename": "content/about.html",
+    "output": "docs/about.html",
+    "title": "About Me",
+},
+{
+    "filename": "content/projects.html",
+    "output": "docs/projects.html",
+    "title": "Coming Soon",
+},
+{
+    "filename": "content/contact.html",
+    "output": "docs/contact.html",
+    "title": "Contact Me",
+}
 
-cat about.html > docs/about.html
-
-cat contact.html > docs/contact.html
-
-cat projects.html > docs/projects.html
+for page in pages:
+    print('Deepinder Kaur')
+    print('About Me')
+    print('Coming Soon')
+    print('Contact Me')
