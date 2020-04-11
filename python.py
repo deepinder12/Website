@@ -1,12 +1,10 @@
-def top()
-top = open('templates/top.html').read()
+def top():
+    top = open('templates/top.html').read()
+    print(top)
 
-print(top)
-
-def bottom()
-bottom = open('templates/bottom.html').read()
-
-print(bottom)
+def bottom():
+    bottom = open('templates/bottom.html').read()
+    print(bottom)
 
 # page_title = page['title']
 # print(page_title)
@@ -35,19 +33,17 @@ pages = [
 ]
 
 for page in pages:
-    print('Deepinder Kaur')
-    print('About Me')
-    print('Coming Soon')
-    print('Contact Me')
-
-page_title = page['title']
-print(page_title)
+    print(page)
+    index_content = open(page["filename"]).read()
+    page_title = page['title']
+    print(page_title)
 
 # Read in the entire template
-template = open("index.html").read()
+template = open("base.html").read()
 
 # Read in the content of the index HTML page
 index_content = open("content/index.html").read()
+about_content = open("content/index.html").read()
 
 # Use the string replace
 finished_index_page = template.replace("{{content}}", index_content)
