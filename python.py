@@ -38,3 +38,12 @@ for page in pages:
     print('About Me')
     print('Coming Soon')
     print('Contact Me')
+
+
+# Read in the entire template
+template = open("base.html").read()
+# Read in the content of the index HTML page
+index_content = open("content/index.html").read()
+# Use the string replace
+finished_index_page = template.replace("{{content}}", index_content)
+open("docs/index.html", "w+").write(finished_index_page)
