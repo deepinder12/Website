@@ -32,6 +32,7 @@ pages = [
     "output": "docs/contact.html",
     "title": "Contact Me",
 }
+]
 
 for page in pages:
     print('Deepinder Kaur')
@@ -39,11 +40,15 @@ for page in pages:
     print('Coming Soon')
     print('Contact Me')
 
+page_title = page['title']
+print(page_title)
 
 # Read in the entire template
-template = open("base.html").read()
+template = open("index.html").read()
+
 # Read in the content of the index HTML page
 index_content = open("content/index.html").read()
+
 # Use the string replace
 finished_index_page = template.replace("{{content}}", index_content)
 open("docs/index.html", "w+").write(finished_index_page)
