@@ -32,14 +32,15 @@ pages = [
 }
 ]
 
+# Read in the entire template
+template = open("base.html").read()
+
 for page in pages:
     print(page)
     index_content = open(page["filename"]).read()
+    about_content = open("filename").read()
     page_title = page['title']
     print(page_title)
-
-# Read in the entire template
-template = open("base.html").read()
 
 # Read in the content of the index HTML page
 index_content = open("content/index.html").read()
